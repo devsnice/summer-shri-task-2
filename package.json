@@ -1,0 +1,23 @@
+{
+  "name": "shri-task-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Borisov Semen <devsnice@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "browser-sync": "^2.19.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-flatten": "^0.4.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-sequence": "^1.0.0",
+    "postcss-utilities": "^0.7.0",
+    "precss": "^2.0.0"
+  }
+}
