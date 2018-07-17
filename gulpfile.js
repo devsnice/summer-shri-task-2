@@ -8,8 +8,7 @@ const pug = require("gulp-pug");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const concatCss = require("gulp-concat-css");
-const cssUtilities = require("postcss-utilities");
-const precss = require("precss");
+const sass = require("gulp-sass");
 
 const concat = require("gulp-concat");
 const flatten = require("gulp-flatten");
@@ -20,7 +19,7 @@ const paths = {
   public: "./public",
   views: "./src/**/*.pug",
   pages: "./src/pages/**/*.pug",
-  styles: "./src/**/*.css",
+  styles: "./src/**/*.scss",
   scripts: "./src/**/*.js",
   images: "./src/components/**/*.{png,svg,jpeg}"
 };
@@ -45,18 +44,15 @@ gulp.task("pug", () =>
     PostCSS
 */
 
-gulp.task("css", () => {
-  const plugins = [
-    precss(),
-    cssUtilities(),
-    autoprefixer({ browsers: ["last 2 version"] })
-  ];
+gulp.task("scss", () => {
+  const plugins = [autoprefixer({ browsers: ["last 2 version"] })];
 
   return gulp
     .src(paths.styles)
+    .pipe(sass().on("error", sass.logError))
     .pipe(postcss(plugins))
     .pipe(concatCss("styles.css"))
-    .pipe(gulp.dest(`${paths.public}/css`));
+    .pipe(gulp.dest(`${paths.public}`));
 });
 
 /*
@@ -103,7 +99,7 @@ const reloadServer = done => {
 */
 
 gulp.task("pug-watch", ["pug"], reloadServer);
-gulp.task("css-watch", ["css"], reloadServer);
+gulp.task("css-watch", ["scss"], reloadServer);
 gulp.task("scripts-watch", ["scripts"], reloadServer);
 
 gulp.task("watch", () => {
@@ -115,7 +111,7 @@ gulp.task("watch", () => {
 
 gulp.task(
   "sequence-gulp",
-  gulpSequence(["pug", "css", "scripts", "images", "watch"])
+  gulpSequence(["pug", "scss", "scripts", "images", "watch"])
 );
 
 gulp.task("default", ["sequence-gulp"], () => {

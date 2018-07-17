@@ -14,10 +14,11 @@
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^2.3.0",
     "gulp-flatten": "^0.4.0",
-    "gulp-postcss": "^7.0.1",
     "gulp-pug": "^3.3.0",
-    "gulp-sequence": "^1.0.0",
-    "postcss-utilities": "^0.7.0",
-    "precss": "^2.0.0"
+    "gulp-sequence": "^1.0.0"
+  },
+  "dependencies": {
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1"
   }
 }
