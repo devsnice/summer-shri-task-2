@@ -1,0 +1,14 @@
+include ../../components/card/card.pug
+
+section.dashboard-scripts
+  .widget-scripts-list
+    .widget-scripts-item
+      +card("sun_active", "Выключить весь свет в доме и во дворе", "", "height-100")
+    .widget-scripts-item
+      +card("scheduled", "Я ухожу", "", "height-100")
+    .widget-scripts-item
+      +card("sun_active", "Включить свет \u2028в коридоре", "", "height-100")
+    .widget-scripts-item
+      +card("temperature_active", "Набрать горячую ванную", "Начнётся в 18:00", "height-100")
+    .widget-scripts-item
+      +card("temperature_active", "Сделать пол тёплым во всей квартире", "", "height-100")

@@ -1,0 +1,42 @@
+.card {
+  width: 200px;
+  height: 120px;
+  background: #f7f7f7;
+  border-radius: 20px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 14px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &-info {
+    &__title {
+      font-family: Arial-BoldMT;
+      font-size: 14px;
+      color: #333333;
+      letter-spacing: 0;
+      line-height: 16px;
+    }
+
+    &__desc {
+      font-size: 12px;
+      color: #858585;
+      letter-spacing: 0.01px;
+      margin-top: 4px;
+    }
+  }
+
+  &:hover {
+    background: #ffffff;
+    box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5);
+    transition: 0.2s ease-in;
+  }
+
+  &_type {
+    &-height-100 {
+      height: 100px;
+    }
+  }
+}

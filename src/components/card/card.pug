@@ -1,0 +1,9 @@
+include ../icon/icon.pug
+
+mixin card(iconName, title, desc, modificator)
+  .card(class="card card_type-"+modificator)
+    header.card-icon
+      +icon(iconName, 24)
+    footer.card-info
+      .card-info__title #{title}
+      .card-info__desc #{desc}

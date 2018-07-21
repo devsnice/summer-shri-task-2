@@ -2,10 +2,22 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: ArialMT;
 
   &-content {
     flex: 1;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -16,4 +28,15 @@ a {
 ul {
   margin: 0;
   padding: 0;
+}
+
+.invisible {
+  visibility: hidden;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+* {
+  box-sizing: border-box;
 }

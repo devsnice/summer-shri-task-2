@@ -1,0 +1,56 @@
+.dashboard-main {
+  padding: 0 20px 0 25px;
+
+  &__header {
+    padding-top: 26px;
+  }
+
+  &__title {
+    font-family: Arial-BoldMT;
+    font-size: 27px;
+    color: #333333;
+    margin-bottom: 6px;
+  }
+
+  &__status {
+    font-size: 14px;
+    color: #333333;
+  }
+
+  &_type {
+    &-background {
+      height: 331px;
+      background: url("/images/bg@2x.png");
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+    }
+  }
+}
+
+.widget-temp {
+  display: flex;
+  margin-top: 25px;
+
+  &-item {
+    margin-right: 18px;
+
+    &__title {
+      font-size: 14px;
+      color: #858585;
+      margin-bottom: 4px;
+      line-height: 16px;
+    }
+
+    &__value {
+      font-family: Arial-BoldMT;
+      font-size: 36px;
+      line-height: 43px;
+      color: #333333;
+    }
+
+    &__icon {
+      display: inline-block;
+    }
+  }
+}

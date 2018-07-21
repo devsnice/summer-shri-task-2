@@ -1,3 +1,22 @@
 extends ../layout/layout.pug
 
+include ../components/icon/icon.pug
+
 block content
+	section.dashboard
+		article.dashboard-panel.dashboard-panel_type-half
+			h1.dashboard-panel__title Главное
+			include ../features/dashboardMain/dashboardMain.pug
+	
+		article.dashboard-panel.dashboard-panel_type-half
+			h1.dashboard-panel__title Избранные сценарии
+			include ../features/dashboardScripts/dashboardScripts.pug
+		
+		article.dashboard-panel.dashboard-panel_type-bottom.dashboard-panel_type-devices
+			h1.dashboard-panel__title Избранные устройства
+			include ../features/dashboardDevices/dashboardDevices.pug
+		
+	
+
+
+	
