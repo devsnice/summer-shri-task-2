@@ -5,7 +5,7 @@ include ../components/icon/icon.pug
 block content
 	section.dashboard
 		article.dashboard-panel.dashboard-panel_type-half
-			h1.dashboard-panel__title Главное
+			h1.dashboard-panel__title.dashboard-panel__title_m-hidden Главное
 			include ../features/dashboardMain/dashboardMain.pug
 	
 		article.dashboard-panel.dashboard-panel_type-half
@@ -14,7 +14,7 @@ block content
 		
 		article.dashboard-panel.dashboard-panel_type-bottom.dashboard-panel_type-devices
 			h1.dashboard-panel__title Избранные устройства
-			include ../features/dashboardDevices/dashboardDevices.pug
+			// include ../features/dashboardDevices/dashboardDevices.pug
 		
 	
 
