@@ -21,7 +21,7 @@ const paths = {
   pages: "./src/pages/**/*.pug",
   styles: "./src/**/*.scss",
   scripts: "./src/**/*.js",
-  images: "./src/components/**/*.{png,svg,jpeg}"
+  images: "./src/**/*.{png,svg,jpeg}"
 };
 
 /*

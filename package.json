@@ -5,7 +5,7 @@
   "author": "Borisov Semen <devsnice@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp --watch"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.3",
