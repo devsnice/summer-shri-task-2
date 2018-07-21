@@ -13,6 +13,9 @@ const sass = require("gulp-sass");
 const concat = require("gulp-concat");
 const flatten = require("gulp-flatten");
 
+const svgSymbols = require("gulp-svg-symbols");
+const svgmin = require("gulp-svgmin");
+
 const browserSync = require("browser-sync").create();
 
 const paths = {
@@ -21,7 +24,8 @@ const paths = {
   pages: "./src/pages/**/*.pug",
   styles: "./src/**/*.scss",
   scripts: "./src/**/*.js",
-  images: "./src/**/*.{png,svg,jpeg}"
+  images: "./src/images/**/*.{png,svg,jpeg}",
+  icons: "./src/icons/**/*.svg"
 };
 
 /*
@@ -78,6 +82,22 @@ gulp.task("images", () =>
 );
 
 /*
+    Icons
+*/
+
+gulp.task("icons", () =>
+  gulp
+    .src(paths.icons)
+    .pipe(svgmin())
+    .pipe(
+      svgSymbols({
+        templates: ["default-svg"]
+      })
+    )
+    .pipe(gulp.dest(`./src/layout/css`))
+);
+
+/*
     Static server
 */
 
@@ -111,7 +131,7 @@ gulp.task("watch", () => {
 
 gulp.task(
   "sequence-gulp",
-  gulpSequence(["pug", "scss", "scripts", "images", "watch"])
+  gulpSequence(["icons", "pug", "scss", "scripts", "images", "watch"])
 );
 
 gulp.task("default", ["sequence-gulp"], () => {

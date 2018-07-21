@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "gulp-postcss": "^7.0.1",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "gulp-svg-symbols": "^3.1.1",
+    "gulp-svgmin": "^1.2.4"
   }
 }
