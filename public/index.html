@@ -9,5 +9,17 @@
   </head>
 </html>
 <body>
-  <div class="container"></div>
+  <div class="container">
+    <div class="termostat" id="termostat">
+      <style id="termostat-styles"></style>
+      <div class="termostat-circle">
+        <div class="termostat-value" id="termostat-value"></div>
+        <div class="termostat-arrow" id="termostat-arrow"></div>
+      </div>
+      <svg class="termostat-marks">
+        <g id="termostat-marks" transform="translate(110, 110) rotate(120)"></g>
+      </svg>
+    </div>
+  </div>
+  <script src="/scripts/main.js"></script>
 </body>
