@@ -1,7 +1,10 @@
 include ./head.pug
 
 body
-  .application
-    block content
+  main.application
+    include ../components/header/header.pug
+    div.application-content
+      block content
+    include ../components/footer/footer.pug
 
 include ./scripts.pug

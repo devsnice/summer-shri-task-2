@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px 27px;
+  background: #fff;
+
+  &-links {
+    &__item {
+      display: inline-block;
+      font-size: 12px;
+      color: #858585;
+      letter-spacing: 0.01px;
+      text-align: left;
+      font-family: ArialMT;
+      padding-right: 15px;
+    }
+  }
+
+  &-copyright {
+    font-family: ArialMT;
+    font-size: 12px;
+    color: #858585;
+    letter-spacing: 0.01px;
+    text-align: left;
+  }
+}
