@@ -5,17 +5,47 @@
   padding: 0 40px;
   margin-top: 30px;
 
+  @media screen and (max-width: 768px) {
+    padding: 0 20px;
+    margin-top: 13px;
+  }
+
   &-panel {
+    &-header {
+      display: flex;
+      align-items: baseline;
+
+      &__filters {
+        margin-left: 13px;
+      }
+    }
+
     &__title {
       font-family: Arial-BoldMT;
       font-size: 18px;
       color: #333333;
       margin: 0 0 20px 0;
+
+      &_m {
+        &-hidden {
+          display: none;
+        }
+      }
     }
 
     &_type {
       &-half {
         width: 49%;
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+
+      &-scripts {
+        @media screen and (max-width: 768px) {
+          margin-top: 30px;
+        }
       }
 
       &-bottom {

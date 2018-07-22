@@ -1,8 +1,13 @@
 .dashboard-main {
-  padding: 0 20px 0 25px;
+  padding: 25px 20px 0 25px;
 
-  &__header {
-    padding-top: 26px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 20px 20px 20px 25px;
   }
 
   &__title {
@@ -10,20 +15,34 @@
     font-size: 27px;
     color: #333333;
     margin-bottom: 6px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
   }
 
   &__status {
     font-size: 14px;
     color: #333333;
+
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+    }
   }
 
   &_type {
     &-background {
-      height: 331px;
+      background: #eee;
       background: url("/images/bg@2x.png");
       background-size: cover;
       background-position: center;
       border-radius: 15px;
+      height: 331px;
+
+      @media screen and (max-width: 768px) {
+        height: auto;
+      }
     }
   }
 }
@@ -31,6 +50,10 @@
 .widget-temp {
   display: flex;
   margin-top: 25px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 15px;
+  }
 
   &-item {
     margin-right: 18px;
@@ -40,6 +63,10 @@
       color: #858585;
       margin-bottom: 4px;
       line-height: 16px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 12px;
+      }
     }
 
     &__value {
@@ -47,10 +74,43 @@
       font-size: 36px;
       line-height: 43px;
       color: #333333;
+
+      @media screen and (max-width: 768px) {
+        font-size: 24px;
+        line-height: 28px;
+
+        .icon {
+          width: 18px;
+          height: 18px;
+        }
+      }
     }
 
     &__icon {
       display: inline-block;
+    }
+  }
+}
+
+.widget-actions {
+  overflow: hidden;
+  margin: 20px -20px 0 -25px;
+  height: 120px;
+
+  @media screen and (min-width: 768px) {
+    height: auto;
+  }
+
+  &-list {
+    display: flex;
+    padding-left: 20px;
+    overflow-y: auto;
+
+    @media screen and (min-width: 768px) {
+      width: 200px;
+      height: 100%;
+      flex-wrap: wrap;
+      padding-left: 0;
     }
   }
 }
