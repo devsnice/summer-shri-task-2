@@ -8,13 +8,23 @@ block content
 			h1.dashboard-panel__title.dashboard-panel__title_m-hidden Главное
 			include ../features/dashboardMain/dashboardMain.pug
 	
-		article.dashboard-panel.dashboard-panel_type-half
+		article.dashboard-panel.dashboard-panel_type-half.dashboard-panel_type-scripts
 			h1.dashboard-panel__title Избранные сценарии
 			include ../features/dashboardScripts/dashboardScripts.pug
 		
 		article.dashboard-panel.dashboard-panel_type-bottom.dashboard-panel_type-devices
-			h1.dashboard-panel__title Избранные устройства
-			// include ../features/dashboardDevices/dashboardDevices.pug
+			header.dashboard-panel-header
+				h1.dashboard-panel__title Избранные устройства
+				.select.dashboard-panel-header__filters
+					ul.select-list
+						li.select-list__item.select-list__item_state-active(tab-index=0) Все
+						li.select-list__item Кухня
+						li.select-list__item Зал
+						li.select-list__item Лампочки
+						li.select-list__item Камеры
+
+						
+			include ../features/dashboardDevices/dashboardDevices.pug
 		
 	
 
