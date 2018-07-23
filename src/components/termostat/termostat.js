@@ -211,8 +211,8 @@ class TermostatArrow {
   }
 }
 
-const termostatInstance = new Termostat({
-  min: 10,
-  max: 30,
-  defaultValue: 20
-});
+// const termostatInstance = new Termostat({
+//   min: 10,
+//   max: 30,
+//   defaultValue: 20
+// });

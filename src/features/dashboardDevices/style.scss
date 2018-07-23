@@ -1,6 +1,12 @@
 .widget-devices {
+  overflow: hidden;
+  margin: 20px -20px 0 -20px;
+  height: 120px;
+  width: 100vw;
+
   &-list {
-    width: 100vw;
     display: flex;
+    padding-left: 20px;
+    overflow-y: auto;
   }
 }

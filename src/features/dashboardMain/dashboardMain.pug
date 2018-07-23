@@ -16,11 +16,20 @@ section.dashboard-main.dashboard-main_type-background
           .widget-temp-item__icon
             +icon("cloud-drizzle", 26)
 
-  .widget-actions
+  .widget-actions#slider-vertical
+    .widget-actions__prev#slider-vertical-prev
+      +icon("arrows", 16, "icon_rotate-180")
+    .widget-actions__next#slider-vertical-next
+      +icon("arrows", 16)
+
     .widget-actions-list
       .widget-actions-item
         +card("temperature", "Philips Cooler", "Начнет охлаждать в 16:30")
       .widget-actions-item
         +card("sun", "Xiaomi Yeelight LED Smart Bulb", "Включится в 17:00")
+      .widget-actions-item
+        +card("temperature", "Philips Cooler", "Начнет охлаждать в 16:30") 
+      .widget-actions-item
+        +card("temperature", "Philips Cooler", "Начнет охлаждать в 16:30")
       .widget-actions-item
         +card("temperature", "Philips Cooler", "Начнет охлаждать в 16:30")
