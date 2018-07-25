@@ -1,0 +1,23 @@
+include ../icon/icon.pug
+include ../termostat/termostat.pug
+
+.popup-layout#popup-layout
+.popup#popup-card
+  .popup-body
+    header.popup-header
+      .popup-header__info
+        h3.popup-header__title Xiaomi Warm Floor
+        p.popup-header__desc Включено
+
+      .popup-header__extra
+        .popup-header__temperature
+          span +23
+        .popup-header__icon
+          +icon("temperature_active", 40)
+    
+    div.popup-content
+      +termostat()
+
+  footer.popup-footer
+    button.button.button_type-yellow Применить
+    button.button.button_type-grey Закрыть
