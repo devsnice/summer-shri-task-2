@@ -30,15 +30,14 @@ class Termostat {
       radius: (this.elem.clientHeight - this.marksSize.lineLength * 2) / 2
     };
 
+    const elementBox = this.elem.getBoundingClientRect();
+
     this.elementCenterCoords = {
       x:
-        this.elem.offsetTop +
+        elementBox.left +
         this.elementOptions.radius +
         this.marksSize.lineLength,
-      y:
-        this.elem.offsetLeft +
-        this.elementOptions.radius +
-        this.marksSize.lineLength
+      y: elementBox.top + this.elementOptions.radius + this.marksSize.lineLength
     };
 
     this.arrow = new TermostatArrow({
@@ -210,9 +209,3 @@ class TermostatArrow {
     )}deg)`;
   }
 }
-
-// const termostatInstance = new Termostat({
-//   min: 10,
-//   max: 30,
-//   defaultValue: 20
-// });

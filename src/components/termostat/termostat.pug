@@ -1,9 +1,10 @@
-.termostat#termostat
-  style#termostat-styles
-  
-  .termostat-circle
-    .termostat-value#termostat-value
-    .termostat-arrow#termostat-arrow
+mixin termostat()
+  .termostat#termostat
+    style#termostat-styles
+    
+    .termostat-circle
+      .termostat-value#termostat-value
+      .termostat-arrow#termostat-arrow
 
-  svg.termostat-marks
-    g#termostat-marks(transform="translate(110, 110) rotate(120)")
+    svg.termostat-marks
+      g#termostat-marks(transform="translate(110, 110) rotate(120)")
