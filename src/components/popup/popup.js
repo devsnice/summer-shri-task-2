@@ -57,8 +57,6 @@ class Popup {
   }
 
   runOpenPopupAnimation() {
-    console.log(this);
-
     window.requestAnimationFrame(() => {
       this.popup.style.top = "";
       this.popup.style.left = "";
