@@ -18,9 +18,23 @@ class Popup {
     };
 
     this.popup = document.querySelector(selector);
+    this.closeButton = this.popup.querySelector("#popup-close");
     this.popupLayout = document.querySelector("#popup-layout");
+    this.layout = document.querySelector("#application");
 
     this.popupOptions = this.initPopupOptions();
+
+    this.closePopup = this.closePopup.bind(this);
+
+    this.initEvents();
+  }
+
+  initEvents() {
+    this.closeButton.addEventListener("click", this.closePopup);
+  }
+
+  removeEvents() {
+    this.closeButton.removeEventListener("click", this.closePopup);
   }
 
   initPopupOptions() {
@@ -37,12 +51,14 @@ class Popup {
     this.popup.style.left = this.previewOptions.left;
 
     this.popup.style.transform = `
-      scaleX(${this.previewOptions.width / this.popupOptions.height}) 
-      scaleY(${this.previewOptions.height / this.popupOptions.width})
+      scaleX(${this.previewOptions.width / this.popupOptions.width}) 
+      scaleY(${this.previewOptions.height / this.popupOptions.height})
     `;
   }
 
   runOpenPopupAnimation() {
+    console.log(this);
+
     window.requestAnimationFrame(() => {
       this.popup.style.top = "";
       this.popup.style.left = "";
@@ -60,7 +76,21 @@ class Popup {
     this.runOpenPopupAnimation();
   }
 
+  closePopup() {
+    this.removePopupLayout();
+    this.popup.classList.remove("popup_state-open");
+    this.removeEvents();
+  }
+
   showPopupLayout() {
+    this.layout.classList.add("application_state-frozen");
+    this.layout.classList.add("application_state-blured");
     this.popupLayout.classList.add("popup-layout_state-opened");
+  }
+
+  removePopupLayout() {
+    this.layout.classList.remove("application_state-frozen");
+    this.layout.classList.remove("application_state-blured");
+    this.popupLayout.classList.remove("popup-layout_state-opened");
   }
 }

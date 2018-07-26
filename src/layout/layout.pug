@@ -4,11 +4,12 @@ body
   .invisible
     include ./css/svg-symbols.svg
 
-  main.application
+  main.application#application
     include ../components/header/header.pug
     div.application-content
       block content
     include ../components/footer/footer.pug
-    include ../components/popup/popup.pug
+  
+include ../components/popup/popup.pug
 
 include ./scripts.pug

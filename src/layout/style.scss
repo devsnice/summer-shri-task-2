@@ -15,6 +15,17 @@
       }
     }
   }
+
+  &_state {
+    &-frozen {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    &-blured {
+      filter: blur(3px);
+    }
+  }
 }
 
 h1,
