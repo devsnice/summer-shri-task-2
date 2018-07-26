@@ -1,7 +1,7 @@
 include ../icon/icon.pug
 
 mixin card(iconName, title, desc, modificator)
-  .card(class="card card_type-"+modificator)
+  .card(class="card card_type-"+modificator, data-card-type=iconName)
     header.card-icon
       +icon(iconName, 24)
     footer.card-info

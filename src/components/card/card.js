@@ -6,6 +6,8 @@ cards.forEach(card => {
   card.addEventListener("click", event => {
     const element = event.target.getBoundingClientRect();
 
+    console.log(event.target.dataset.cardType);
+
     const initTermostat = () => {
       if (termostatInited) return;
 
