@@ -18,11 +18,12 @@
     pointer-events: none;
 
     &__title {
-      font-family: Arial-BoldMT;
+      //font-weight: 700;
       font-size: 14px;
       color: #333333;
       letter-spacing: 0;
       line-height: 16px;
+      font-weight: 700;
     }
 
     &__desc {
