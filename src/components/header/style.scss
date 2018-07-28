@@ -1,86 +1,132 @@
 .header {
-	background: #fff;
-	border-bottom: 1px solid #f0f0f0;
-	display: flex;
-	height: 92px;
-	padding: 0 40px;
-	width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  height: 92px;
+  width: 100%;
 
-	@media screen and (max-width: 768px) {
-		height: 51px;
-		padding: 0 20px 0;
-		top: 0;
-		position: fixed;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		border-bottom: none;
+  @media screen and (max-width: 768px) {
+    height: 51px;
+    top: 0;
+    position: fixed;
+    border-bottom: none;
 
-		@supports (position: sticky) {
-			position: sticky;
-		}
-	}
+    @supports (position: sticky) {
+      position: sticky;
+    }
+  }
 
-	&-logotype {
-		padding: 32px 0;
-		float: left;
+  &-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 0 40px;
 
-		@media screen and (max-width: 768px) {
-			padding: 0;
-		}
-	}
+    @media screen and (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px 0;
+    }
+  }
 
-	&-menu {
-		$menu: &;
+  &-logotype {
+    padding: 32px 0;
+    float: left;
 
-		margin-left: 52px;
-		padding: 36px 0;
+    @media screen and (max-width: 768px) {
+      padding: 0;
+    }
+  }
 
-		@media screen and (max-width: 768px) {
-			padding: 0;
-			margin: 0;
-		}
+  &-menu {
+    $menu: &;
 
-		&-list {
-			@media screen and (max-width: 768px) {
-				display: none;
-			}
+    margin-left: 52px;
+    padding: 36px 0;
 
-			&__item {
-				display: inline-block;
-				margin-right: 28px;
-				font-size: 16px;
-				color: #333333;
-				line-height: 20px;
-				opacity: 0.6;
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      margin: 0;
+    }
 
-				font-weight: 700;
+    &-list {
+      $menu-list: &;
 
-				&_state {
-					&-active {
-						opacity: 1;
-					}
-				}
-			}
-		}
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
 
-		&__burger {
-			cursor: pointer;
-			display: none;
+      &__item {
+        display: inline-block;
+        margin-right: 28px;
+        font-size: 16px;
+        color: #333333;
+        line-height: 20px;
+        opacity: 0.6;
+        font-weight: 700;
 
-			@media screen and (max-width: 768px) {
-				display: block;
-			}
-		}
-	}
+        &_state {
+          &-active {
+            opacity: 1;
+          }
+        }
+
+        &:hover,
+        &:focus {
+          color: #333333;
+        }
+      }
+
+      &_state {
+        &-mobile {
+          position: absolute;
+          top: 51px;
+          width: 100%;
+          height: auto;
+          background: #fff;
+          padding: 50px 0;
+          left: 0;
+          box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5);
+
+          #{$menu-list}__item {
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            font-size: 24px;
+            text-align: center;
+            margin-right: 0;
+          }
+        }
+
+        &-mobile-opened {
+          display: block;
+        }
+      }
+    }
+
+    &__burger {
+      cursor: pointer;
+      display: none;
+
+      img {
+        width: 16px;
+        height: 13px;
+      }
+
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+    }
+  }
 }
 
 .logotype {
-	width: 127px;
-	height: 27px;
-	display: block;
+  width: 127px;
+  height: 27px;
+  display: block;
 
-	@media screen and (max-width: 768px) {
-		width: 110px;
-	}
+  @media screen and (max-width: 768px) {
+    width: 110px;
+  }
 }
