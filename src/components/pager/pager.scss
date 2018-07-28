@@ -1,0 +1,21 @@
+.pager {
+  display: flex;
+  align-items: baseline;
+
+  &__page {
+    height: 20px;
+    transition: 0.2s ease;
+
+    &_back {
+      margin-right: 22px;
+    }
+
+    &:hover {
+      opacity: 0.4;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+}

@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: Arial;
   min-width: 1366px;
 
   @media screen and (max-width: 768px) {
@@ -48,6 +47,10 @@ p {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+body {
+  font-family: Arial;
 }
 
 .invisible {

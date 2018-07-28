@@ -14,7 +14,6 @@ const concat = require("gulp-concat");
 const flatten = require("gulp-flatten");
 
 const svgSymbols = require("gulp-svg-symbols");
-const svgmin = require("gulp-svgmin");
 
 const browserSync = require("browser-sync").create();
 
@@ -88,7 +87,6 @@ gulp.task("images", () =>
 gulp.task("icons", () =>
   gulp
     .src(paths.icons)
-    .pipe(svgmin())
     .pipe(
       svgSymbols({
         templates: ["default-svg"]

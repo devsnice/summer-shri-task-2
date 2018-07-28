@@ -18,6 +18,12 @@
       &__filters {
         margin-left: 13px;
       }
+
+      &_type {
+        &-scripts {
+          justify-content: space-between;
+        }
+      }
     }
 
     &__title {
