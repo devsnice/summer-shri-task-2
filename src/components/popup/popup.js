@@ -6,7 +6,8 @@ class Popup {
       position: { top, left }
     },
     selector,
-    openCallback
+    openCallback,
+    layout
   }) {
     this.openCallback = openCallback;
     this.animationTime = 300;
@@ -20,7 +21,7 @@ class Popup {
     this.popup = document.querySelector(selector);
     this.closeButton = this.popup.querySelector("#popup-close");
     this.popupLayout = document.querySelector("#popup-layout");
-    this.layout = document.querySelector("#application");
+    this.layout = layout;
 
     this.popupOptions = this.initPopupOptions();
 
@@ -81,14 +82,12 @@ class Popup {
   }
 
   showPopupLayout() {
-    this.layout.classList.add("application_state-frozen");
-    this.layout.classList.add("application_state-blured");
+    this.layout.block();
     this.popupLayout.classList.add("popup-layout_state-opened");
   }
 
   removePopupLayout() {
-    this.layout.classList.remove("application_state-frozen");
-    this.layout.classList.remove("application_state-blured");
+    this.layout.unblock();
     this.popupLayout.classList.remove("popup-layout_state-opened");
   }
 }

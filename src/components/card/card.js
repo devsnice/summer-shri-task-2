@@ -30,7 +30,8 @@ cards.forEach(card => {
           left: element.left
         }
       },
-      openCallback: initTermostat
+      openCallback: initTermostat,
+      layout: Layout // works hoisting mechanism
     });
 
     cardSettingsPopup.open();
