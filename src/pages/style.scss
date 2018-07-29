@@ -11,19 +11,31 @@
   }
 
   &-panel {
+    width: 100%;
+
     &-header {
       display: flex;
       align-items: baseline;
 
       &__filters {
         margin-left: 13px;
+        float: right;
       }
 
       &_type {
         &-scripts {
           justify-content: space-between;
         }
+
+        &-devices {
+          justify-content: space-between;
+        }
       }
+    }
+
+    &-filters {
+      display: flex;
+      align-items: baseline;
     }
 
     &__title {

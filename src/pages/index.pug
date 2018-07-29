@@ -16,14 +16,16 @@ block content
 			include ../features/dashboardScripts/dashboardScripts.pug
 		
 		article.dashboard-panel.dashboard-panel_type-bottom.dashboard-panel_type-devices
-			header.dashboard-panel-header
-				h1.dashboard-panel__title Избранные устройства
-				.select.dashboard-panel-header__filters#select
-					ul.select-list
-						li.select-list__item.select-list__item_state-active(tab-index=0) Все
-						li.select-list__item Кухня
-						li.select-list__item Зал
-						li.select-list__item Лампочки
-						li.select-list__item Камеры
+			header.dashboard-panel-header.dashboard-panel-header_type-devices
+				div.dashboard-panel-filters
+					h1.dashboard-panel__title Избранные устройства
+					.select.dashboard-panel-header__filters#select
+						ul.select-list
+							li.select-list__item.select-list__item_state-active(tab-index=0) Все
+							li.select-list__item Кухня
+							li.select-list__item Зал
+							li.select-list__item Лампочки
+							li.select-list__item Камеры
+				+pager("devices-list-pager")
 
 			include ../features/dashboardDevices/dashboardDevices.pug

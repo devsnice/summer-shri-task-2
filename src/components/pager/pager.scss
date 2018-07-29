@@ -2,6 +2,10 @@
   display: flex;
   align-items: baseline;
 
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
   &__page {
     height: 20px;
     transition: 0.2s ease;
@@ -11,7 +15,7 @@
     }
 
     &:hover {
-      opacity: 0.4;
+      opacity: 0.7;
     }
 
     &:disabled {
