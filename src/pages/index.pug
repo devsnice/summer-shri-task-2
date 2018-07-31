@@ -2,6 +2,7 @@ extends ../layout/layout.pug
 
 include ../components/icon/icon.pug
 include ../components/pager/pager.pug
+include ../components/mobileDropdown/mobileDropdown.pug
 
 block content
 	section.dashboard
@@ -19,13 +20,14 @@ block content
 			header.dashboard-panel-header.dashboard-panel-header_type-devices
 				div.dashboard-panel-filters
 					h1.dashboard-panel__title Избранные устройства
-					.select.dashboard-panel-header__filters#select
+					.select.dashboard-panel-header__filters
 						ul.select-list
 							li.select-list__item.select-list__item_state-active(tab-index=0) Все
 							li.select-list__item Кухня
 							li.select-list__item Зал
 							li.select-list__item Лампочки
 							li.select-list__item Камеры
+					+mobileDropdown()
 				+pager("devices-list-pager")
 
 			include ../features/dashboardDevices/dashboardDevices.pug

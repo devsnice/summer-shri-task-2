@@ -1,0 +1,12 @@
+include ../icon/icon.pug
+
+mixin mobileDropdown()
+  span.custom-dropdown.custom-dropdown_type-mobile
+    select.custom-dropdown__select
+      option Все
+      option Кухня
+      option Зал
+      option Лампочки
+      option Камеры
+    .custom-dropdown__arrow
+      +icon("control_arrow", 12, "icon_rotate-270")

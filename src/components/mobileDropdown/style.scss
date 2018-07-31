@@ -1,0 +1,65 @@
+.custom-dropdown {
+	&__select {
+		height: 30px;
+		padding: 0 0 0 16px;
+		font-family: Arial;
+		font-size: 13px;
+		font-weight: 700;
+		background-color: #ffd93e;
+		color: #444;
+	}
+
+	&__arrow {
+		visibility: hidden;
+	}
+
+	&_type-mobile {
+		@media screen and (min-width: 768px) {
+			display: none;
+		}
+	}
+}
+
+// Try to customize select when browser suppors appearance
+@supports (pointer-events: none) and
+	((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
+	.custom-dropdown {
+		position: relative;
+
+		&__select {
+			padding-right: 32px;
+			border: 0;
+			border-radius: 20px;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+
+			&[disabled] {
+				color: rgba(0, 0, 0, 0.3);
+				background-color: #e3e3e3;
+			}
+
+			&:focus,
+			&:active {
+				& + .custom-dropdown__arrow {
+					transform: rotate(180deg);
+				}
+			}
+
+			option {
+				width: 40px;
+			}
+		}
+
+		&__arrow {
+			content: "";
+			transition: 0.2s ease;
+			visibility: visible;
+			pointer-events: none;
+			position: absolute;
+			top: 6px;
+			right: 15px;
+			width: 12px;
+		}
+	}
+}

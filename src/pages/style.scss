@@ -1,76 +1,76 @@
 .dashboard {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 40px;
-  margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 0 40px;
+	margin-top: 30px;
 
-  @media screen and (max-width: 768px) {
-    padding: 0 20px;
-    margin-top: 13px;
-  }
+	@media screen and (max-width: 768px) {
+		padding: 0 20px;
+		margin-top: 13px;
+	}
 
-  &-panel {
-    width: 100%;
+	&-panel {
+		width: 100%;
 
-    &-header {
-      display: flex;
-      align-items: baseline;
+		&-header {
+			display: flex;
+			align-items: baseline;
 
-      &__filters {
-        margin-left: 13px;
-        float: right;
-      }
+			&__filters {
+				margin-left: 13px;
+				float: right;
+			}
 
-      &_type {
-        &-scripts {
-          justify-content: space-between;
-        }
+			&_type {
+				&-scripts {
+					justify-content: space-between;
+				}
 
-        &-devices {
-          justify-content: space-between;
-        }
-      }
-    }
+				&-devices {
+					justify-content: space-between;
+				}
+			}
+		}
 
-    &-filters {
-      display: flex;
-      align-items: baseline;
-    }
+		&-filters {
+			display: flex;
+			align-items: baseline;
+		}
 
-    &__title {
-      font-weight: 700;
-      font-size: 18px;
-      color: #333333;
-      margin: 0 0 20px 0;
+		&__title {
+			font-weight: 700;
+			font-size: 18px;
+			color: #333333;
+			margin: 0 0 20px 0;
 
-      &_m {
-        &-hidden {
-          @media screen and (max-width: 768px) {
-            display: none;
-          }
-        }
-      }
-    }
+			&_m {
+				&-hidden {
+					@media screen and (min-width: 768px) {
+						display: none;
+					}
+				}
+			}
+		}
 
-    &_type {
-      &-half {
-        width: 49%;
+		&_type {
+			&-half {
+				width: 49%;
 
-        @media screen and (max-width: 768px) {
-          width: 100%;
-        }
-      }
+				@media screen and (max-width: 768px) {
+					width: 100%;
+				}
+			}
 
-      &-scripts {
-        @media screen and (max-width: 768px) {
-          margin-top: 30px;
-        }
-      }
+			&-scripts {
+				@media screen and (max-width: 768px) {
+					margin-top: 30px;
+				}
+			}
 
-      &-bottom {
-        margin-top: 34px;
-      }
-    }
-  }
+			&-bottom {
+				margin-top: 34px;
+			}
+		}
+	}
 }
