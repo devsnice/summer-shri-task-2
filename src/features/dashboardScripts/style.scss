@@ -1,9 +1,11 @@
+@import "../../styles/vars";
+
 .widget-scripts {
   overflow: hidden;
 
   @media screen and (max-width: 768px) {
     width: 100vw;
-    margin: 20px -20px 0 -20px;
+    margin: 20px -$paddingSideMobile 0 -$paddingSideMobile;
     height: 100px;
   }
 
@@ -24,7 +26,7 @@
 
     @media screen and (max-width: 768px) {
       width: 100%;
-      padding-left: 20px;
+      padding-left: $paddingSideMobile;
       overflow-y: auto;
       flex-wrap: nowrap;
     }
