@@ -10,8 +10,10 @@ const autoprefixer = require("autoprefixer");
 const concatCss = require("gulp-concat-css");
 const sass = require("gulp-sass");
 
-const concat = require("gulp-concat");
 const flatten = require("gulp-flatten");
+
+const webpack = require("webpack");
+const webpackStream = require("webpack-stream");
 
 const svgSymbols = require("gulp-svg-symbols");
 
@@ -64,8 +66,24 @@ gulp.task("scss", () => {
 
 gulp.task("scripts", () =>
   gulp
-    .src(paths.scripts)
-    .pipe(concat("main.js"))
+    .src("./src/pages/index.js")
+    .pipe(
+      webpackStream({
+        output: {
+          filename: "main.js"
+        },
+        mode: "development",
+        devtool: "source-map",
+        module: {
+          rules: [
+            {
+              test: /\.(js)$/,
+              loader: "babel-loader"
+            }
+          ]
+        }
+      })
+    )
     .pipe(gulp.dest(`${paths.public}/scripts`))
 );
 

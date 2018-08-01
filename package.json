@@ -15,9 +15,13 @@
     "gulp-concat-css": "^2.3.0",
     "gulp-flatten": "^0.4.0",
     "gulp-pug": "^3.3.0",
-    "gulp-sequence": "^1.0.0"
+    "gulp-rename": "^1.4.0",
+    "gulp-sequence": "^1.0.0",
+    "webpack": "^4.16.3",
+    "webpack-stream": "^5.1.0"
   },
   "dependencies": {
+    "babel-loader": "^7.1.5",
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^4.0.1",
     "gulp-svg-symbols": "^3.1.1",

@@ -1,4 +1,4 @@
-class VerticalSlider {
+export default class VerticalSlider {
   /**
    *
    * @param {string} elementSelector
@@ -90,5 +90,3 @@ class VerticalSlider {
     this.listWrapper.style.marginTop = `${this.currentListShifting}px`;
   }
 }
-
-const nextEventSliders = new VerticalSlider("#slider-vertical");

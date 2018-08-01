@@ -4,7 +4,7 @@
  * and calls side-effects in outer modules
  */
 
-class Pager {
+export default class Pager {
   /**
    * {
    *  @param {String} selectorId - how to find pager in app

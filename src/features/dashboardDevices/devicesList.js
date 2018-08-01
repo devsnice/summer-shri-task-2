@@ -1,4 +1,6 @@
-class DevicesList {
+import Pager from "../../components/pager/pager";
+
+export default class DevicesList {
   constructor() {
     this.devicesList = document.querySelector(".widget-devices-list");
     this.deviceItemWidth;
@@ -59,5 +61,3 @@ class DevicesList {
       currentPage}px`;
   }
 }
-
-const devicesList = new DevicesList();

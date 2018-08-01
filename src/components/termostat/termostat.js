@@ -3,7 +3,7 @@
 // - hold value in the input
 // - fix arrow styles
 
-class Termostat {
+export default class Termostat {
   constructor({ min, max, defaultValue }) {
     this.isDragging = false;
 

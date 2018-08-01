@@ -14,4 +14,6 @@ class ApplicationLayout {
   }
 }
 
-var Layout = new ApplicationLayout("#application");
+const Layout = new ApplicationLayout("#application");
+
+export default Layout;

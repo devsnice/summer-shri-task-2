@@ -6,7 +6,7 @@ const domUtils = {
   }
 };
 
-class Navigation {
+export default class Navigation {
   constructor({ selector }) {
     this.menuOpened = false;
     this.headerMenu = document.querySelector(selector);
@@ -18,7 +18,9 @@ class Navigation {
   }
 
   isMobile() {
-    return window.innerWidth < 768;
+    const maxMobileWidth = 768;
+
+    return window.innerWidth < maxMobileWidth;
   }
 
   initNavigation() {
@@ -31,17 +33,6 @@ class Navigation {
         this.closeNavigation();
       }
     });
-
-    // window.addEventListener("click", e => {
-    //   const clickOutsideMenu = !domUtils.doesNodeContainClick(
-    //     this.headerMenu,
-    //     e
-    //   );
-
-    //   if (this.menuOpened && clickOutsideMenu) {
-    //     this.closeNavigation();
-    //   }
-    // });
   }
 
   openNavigation() {
@@ -56,8 +47,3 @@ class Navigation {
     this.menuOpened = false;
   }
 }
-
-const headerNavigation = new Navigation({
-  selector: "#header-menu",
-  layout: Layout
-});

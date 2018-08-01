@@ -1,4 +1,6 @@
-class ScriptsList {
+import Pager from "../../components/pager/pager";
+
+export default class ScriptsList {
   constructor() {
     this.scriptsList = document.querySelector(".widget-scripts-list");
     this.pager = this.initPager();
@@ -29,5 +31,3 @@ class ScriptsList {
     this.scriptsList.style.marginLeft = `-${100 * currentPage}%`;
   }
 }
-
-const scriptsList = new ScriptsList();
