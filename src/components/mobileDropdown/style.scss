@@ -1,3 +1,5 @@
+@import "../../styles/media";
+
 .custom-dropdown {
   &__select {
     height: 30px;
@@ -14,7 +16,7 @@
   }
 
   &_type-mobile {
-    @media screen and (min-width: 768px) {
+    @include media("desktop") {
       display: none;
     }
   }

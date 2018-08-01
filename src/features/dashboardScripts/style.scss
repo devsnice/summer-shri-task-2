@@ -1,9 +1,10 @@
 @import "../../styles/vars";
+@import "../../styles/media";
 
 .widget-scripts {
   overflow: hidden;
 
-  @media screen and (max-width: 768px) {
+  @include media("mobile") {
     width: 100vw;
     margin: 20px -$paddingSideMobile 0 -$paddingSideMobile;
     height: 100px;
@@ -24,7 +25,7 @@
     transition: 0.4s ease;
     width: 300%;
 
-    @media screen and (max-width: 768px) {
+    @include media("mobile") {
       width: 100%;
       padding-left: $paddingSideMobile;
       overflow-y: auto;
@@ -37,7 +38,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    @media screen and (max-width: 768px) {
+    @include media("mobile") {
       flex-wrap: nowrap;
       width: auto;
     }

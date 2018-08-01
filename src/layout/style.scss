@@ -1,17 +1,19 @@
+@import "../styles/media";
+
 .application {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   min-width: 1366px;
 
-  @media screen and (max-width: 768px) {
+  @include media("mobile") {
     min-width: 100%;
   }
 
   &-content {
     flex: 1;
 
-    @media screen and (max-width: 768px) {
+    @include media("mobile") {
       margin-top: 51px;
 
       @supports (position: sticky) {
