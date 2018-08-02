@@ -1,0 +1,19 @@
+include ../icon/icon.pug
+
+mixin range(type)
+  div(class="range range_" +type)
+    input(type="range")
+    
+    if type == "temperature"
+      div
+        .range-label.range-label_min
+          .range-label__text –10
+        .range-label.range-label_max
+          .range-label__text +30
+
+    if type == "light"
+      div
+        .range-label.range-label_min
+          +icon("sun_white", 26)
+        .range-label.range-label_max
+          +icon("sun_white", 32)
