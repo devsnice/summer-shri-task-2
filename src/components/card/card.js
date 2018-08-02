@@ -16,36 +16,86 @@ export default class Cards {
       card.addEventListener("click", event => {
         const element = event.target.getBoundingClientRect();
 
-        console.log(event.target.dataset.cardType);
+        const { cardType } = event.target.dataset;
 
-        const initTermostat = () => {
-          if (this.termostatInited) return;
+        switch (cardType) {
+          case "temperature_active":
+            this.showTermostatPopup(element);
+            break;
 
-          const termostatInstance = new Termostat({
-            min: 10,
-            max: 30,
-            defaultValue: 20
-          });
+          case "temperature":
+            this.showTemperatureControllerPopup(element);
+            break;
 
-          this.termostatInited = true;
-        };
-
-        const cardSettingsPopup = new Popup({
-          selector: "#popup-card",
-          preview: {
-            width: element.width,
-            height: element.height,
-            position: {
-              top: element.top,
-              left: element.left
-            }
-          },
-          openCallback: initTermostat,
-          layout: Layout
-        });
-
-        cardSettingsPopup.open();
+          case "sun":
+          case "sun_active":
+            this.showLightControllerPopup(element);
+        }
       });
     });
+  }
+
+  showTermostatPopup(element) {
+    const initTermostat = () => {
+      if (this.termostatInited) return;
+
+      const termostatInstance = new Termostat({
+        min: 10,
+        max: 30,
+        defaultValue: 20
+      });
+
+      this.termostatInited = true;
+    };
+
+    const termostatSettingsPopup = new Popup({
+      selector: "#popup-card-termostat",
+      preview: {
+        width: element.width,
+        height: element.height,
+        position: {
+          top: element.top,
+          left: element.left
+        }
+      },
+      openCallback: initTermostat,
+      layout: Layout
+    });
+
+    termostatSettingsPopup.open();
+  }
+
+  showTemperatureControllerPopup(element) {
+    const temperatureSettingsPopup = new Popup({
+      selector: "#popup-controller-temperature",
+      preview: {
+        width: element.width,
+        height: element.height,
+        position: {
+          top: element.top,
+          left: element.left
+        }
+      },
+      layout: Layout
+    });
+
+    temperatureSettingsPopup.open();
+  }
+
+  showLightControllerPopup(element) {
+    const lightSettingsPopup = new Popup({
+      selector: "#popup-controller-light",
+      preview: {
+        width: element.width,
+        height: element.height,
+        position: {
+          top: element.top,
+          left: element.left
+        }
+      },
+      layout: Layout
+    });
+
+    lightSettingsPopup.open();
   }
 }
