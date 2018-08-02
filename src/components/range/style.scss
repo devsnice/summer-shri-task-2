@@ -1,6 +1,12 @@
+@import "../../styles/media";
+
 @mixin range($background) {
   width: 100%;
   position: relative;
+
+  @include media("mobile") {
+    transform: rotate(-90deg);
+  }
 
   .range-label {
     content: "";
@@ -12,6 +18,10 @@
       font-size: 18px;
       color: #ffffff;
       font-weight: 600;
+
+      @include media("mobile") {
+        transform: rotate(90deg);
+      }
     }
 
     &_min {
