@@ -19,7 +19,7 @@ export default class Popup {
     };
 
     this.popup = document.querySelector(selector);
-    this.closeButton = this.popup.querySelector("#popup-close");
+    this.closeButton = this.popup.querySelector(".popup-close");
     this.popupLayout = document.querySelector("#popup-layout");
     this.layout = layout;
 

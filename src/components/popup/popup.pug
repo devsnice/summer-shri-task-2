@@ -1,8 +1,12 @@
 include ../icon/icon.pug
 include ../termostat/termostat.pug
+include ../range/range.pug
 
+// Common layout for popups
 .popup-layout#popup-layout
-.popup#popup-card
+
+// Termostat controller popup layout
+.popup#popup-card-termostat
   .popup-body
     header.popup-header
       .popup-header__info
@@ -20,4 +24,44 @@ include ../termostat/termostat.pug
 
   footer.popup-footer
     button.button.button_type-yellow Применить
-    button.button.button_type-white#popup-close Закрыть
+    button.button.button_type-white.popup-close Закрыть
+
+// Temperature controller popup layout
+.popup#popup-controller-temperature
+  .popup-body
+    header.popup-header
+      .popup-header__info
+        h3.popup-header__title Elgato Eve Degree Connected
+        p.popup-header__desc Включено
+
+      .popup-header__extra
+        .popup-header__temperature
+          span +23
+        .popup-header__icon
+          +icon("temperature_active", 40)
+    
+    div.popup-content
+      +range("temperature")
+
+  footer.popup-footer
+    button.button.button_type-yellow Применить
+    button.button.button_type-white.popup-close Закрыть
+
+// Light controller popup layout
+.popup#popup-controller-light
+  .popup-body
+    header.popup-header
+      .popup-header__info
+        h3.popup-header__title Elgato Eve Degree Connected
+        p.popup-header__desc Включено
+
+      .popup-header__extra
+        .popup-header__icon
+          +icon("sun_active", 40)
+    
+    div.popup-content
+      +range("light")
+
+  footer.popup-footer
+    button.button.button_type-yellow Применить
+    button.button.button_type-white.popup-close Закрыть
