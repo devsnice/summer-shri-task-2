@@ -21,6 +21,7 @@
     "webpack-stream": "^5.1.0"
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^4.0.1",
