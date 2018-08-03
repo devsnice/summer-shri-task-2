@@ -1,0 +1,127 @@
+@import "../../styles/media";
+
+@mixin range($background) {
+  width: 100%;
+  position: relative;
+
+  @include media("mobile") {
+    transform: rotate(-90deg);
+  }
+
+  .range-label {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &__text {
+      font-size: 18px;
+      color: #ffffff;
+      font-weight: 600;
+
+      @include media("mobile") {
+        transform: rotate(90deg);
+      }
+    }
+
+    &_min {
+      left: 18px;
+    }
+
+    &_max {
+      right: 18px;
+    }
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 27px 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 60px;
+      cursor: pointer;
+      border-radius: 25px;
+      border: 0px solid #010101;
+      border-radius: 35px;
+      background: $background;
+    }
+
+    &::-webkit-slider-thumb {
+      height: 68px;
+      width: 68px;
+      border-radius: 100%;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0);
+      box-shadow: inset 0 0 0 3px rgba(51, 51, 51, 0.1);
+      border: 4px solid #fff;
+      -webkit-appearance: none;
+      margin-top: -4px;
+    }
+
+    &::-moz-range-track {
+      width: 100%;
+      height: 60px;
+      cursor: pointer;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+      background: $background;
+      border-radius: 30px;
+      border: 0px solid #010101;
+    }
+
+    &::-moz-range-thumb {
+      background: rgba(0, 0, 0, 0);
+      box-shadow: inset 0 0 0 3px rgba(51, 51, 51, 0.1);
+      border: 4px solid #fff;
+      height: 60px;
+      width: 60px;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+
+    &::-ms-track {
+      width: 100%;
+      height: 60px;
+      cursor: pointer;
+      border-color: transparent;
+      color: transparent;
+      background: $background;
+      border-radius: 50px;
+    }
+
+    &::-ms-fill-lower {
+      border-size: 0px;
+    }
+
+    &::-ms-fill-upper {
+      border-size: 0px;
+    }
+
+    &::-ms-thumb {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0);
+      box-shadow: inset 0 0 0 3px rgba(51, 51, 51, 0.1);
+      border: 4px solid #fff;
+      height: 60px;
+      width: 60px;
+      border-radius: 100%;
+    }
+  }
+}
+
+.range {
+  &_temperature {
+    @include range(
+      linear-gradient(90deg, #068fff 0%, #ffd800 50%, #f76b1c 100%)
+    );
+  }
+
+  &_light {
+    @include range(linear-gradient(85deg, #ffe682 2%, #ff9e00 98%));
+  }
+}
