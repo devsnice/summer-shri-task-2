@@ -44,5 +44,14 @@
     &-height-100 {
       height: 100px;
     }
+
+    &-scripts {
+      width: 100%;
+      height: 100px;
+
+      .card-info__title {
+        width: 200px;
+      }
+    }
   }
 }
