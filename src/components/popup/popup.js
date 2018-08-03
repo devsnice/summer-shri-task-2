@@ -1,3 +1,7 @@
+/**
+ *  This class holds logic for working with system Popups.
+ *  It can animate block with a defined selector.
+ */
 export default class Popup {
   constructor({
     preview: {
@@ -10,7 +14,6 @@ export default class Popup {
     layout
   }) {
     this.openCallback = openCallback;
-    this.animationTime = 300;
     this.previewOptions = {
       width,
       height,
@@ -30,14 +33,6 @@ export default class Popup {
     this.initEvents();
   }
 
-  initEvents() {
-    this.closeButton.addEventListener("click", this.closePopup);
-  }
-
-  removeEvents() {
-    this.closeButton.removeEventListener("click", this.closePopup);
-  }
-
   initPopupOptions() {
     const popupBox = this.popup.getBoundingClientRect();
 
@@ -47,6 +42,20 @@ export default class Popup {
     };
   }
 
+  initEvents() {
+    this.closeButton.addEventListener("click", this.closePopup);
+    this.popup.addEventListener("transitionend", this.openCallback);
+  }
+
+  removeEvents() {
+    this.closeButton.removeEventListener("click", this.closePopup);
+    this.popup.removeEventListener("transitionend", this.openCallback);
+  }
+
+  /**
+   * Positions element before animation
+   * creates miniature of popup in place, when it was opened.
+   */
   positionPopupInBeginAnimationPosition() {
     this.popup.style.top = this.previewOptions.top;
     this.popup.style.left = this.previewOptions.left;
@@ -55,17 +64,23 @@ export default class Popup {
       scaleX(${this.previewOptions.width / this.popupOptions.width}) 
       scaleY(${this.previewOptions.height / this.popupOptions.height})
     `;
+
+    this.popup.style.visibility = "visible";
+    this.popup.style.transitionProperty = "";
+    this.popup.style.transitionDuration = "";
   }
 
+  /**
+   * Positions element before animation,
+   * its run animation of popup from miniature to its full size.
+   */
   runOpenPopupAnimation() {
     window.requestAnimationFrame(() => {
-      this.popup.style.top = "";
-      this.popup.style.left = "";
-      this.popup.style.transform = "";
-
-      this.popup.classList.add("popup_state-open");
-
-      setTimeout(this.openCallback, this.animationTime);
+      this.popup.style.transitionProperty = "transform, top, left";
+      this.popup.style.transitionDuration = "0.3s";
+      this.popup.style.top = "50%";
+      this.popup.style.left = "50%";
+      this.popup.style.transform = "translate(-50%, -50%) scaleX(1) scaleY(1)";
     });
   }
 
@@ -77,7 +92,8 @@ export default class Popup {
 
   closePopup() {
     this.removePopupLayout();
-    this.popup.classList.remove("popup_state-open");
+    this.popup.style.visibility = "hidden";
+
     this.removeEvents();
   }
 

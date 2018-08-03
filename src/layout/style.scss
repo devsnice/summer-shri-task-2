@@ -5,6 +5,7 @@
   flex-direction: column;
   min-height: 100vh;
   min-width: 1366px;
+  position: relative;
 
   @include media("mobile") {
     min-width: 100%;
@@ -24,7 +25,7 @@
 
   &_state {
     &-frozen {
-      height: 100vh;
+      height: 100%;
       overflow: hidden;
     }
 
