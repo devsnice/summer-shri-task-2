@@ -47,15 +47,13 @@
 
     &:before {
       content: "";
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 10px 10px 0 10px;
-      border-color: #000 transparent transparent transparent;
       position: absolute;
+      width: 12px;
+      height: 8px;
       bottom: 0;
-      left: -10px;
-      border-radius: 1px;
+      left: -5px;
+      transform: rotate(180deg);
+      background: url("/images/termostat_arrow.svg");
     }
   }
 
