@@ -116,17 +116,34 @@ export default class Termostat {
   }
 
   addEventListeners() {
+    // begin dragging
     this.elem.addEventListener("mousedown", e => {
       this.isDragging = true;
     });
 
+    this.elem.addEventListener("touchstart", e => {
+      this.isDragging = true;
+    });
+
+    // dragging
     window.addEventListener("mousemove", e => {
       if (this.isDragging) {
         this.processUserGesture(e);
       }
     });
 
+    window.addEventListener("touchmove", e => {
+      if (this.isDragging) {
+        this.processUserGesture(e);
+      }
+    });
+
+    // end dragging
     window.addEventListener("mouseup", e => {
+      this.isDragging = false;
+    });
+
+    window.addEventListener("touchend", e => {
       this.isDragging = false;
     });
   }
