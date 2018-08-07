@@ -103,6 +103,7 @@
     height: 331px;
     margin: -25px 0 0 -25px;
     position: relative;
+    width: 200px;
   }
 
   &-list {
@@ -112,10 +113,12 @@
     transition: 0.4s;
 
     @include media("desktop") {
-      width: 200px;
+      width: 220px;
       flex-wrap: wrap;
       padding-left: 0;
       padding-top: 20px;
+      overflow: scroll;
+      height: 100%;
     }
   }
 
@@ -125,7 +128,6 @@
     }
   }
 
-  &__prev,
   &__next {
     left: 0;
     cursor: pointer;
@@ -137,11 +139,10 @@
     justify-content: center;
     align-items: center;
     visibility: hidden;
-  }
 
-  &__prev {
-    top: 0;
-    border-radius: 0 0 20px 20px;
+    &_visible {
+      visibility: visible;
+    }
   }
 
   &__next {
