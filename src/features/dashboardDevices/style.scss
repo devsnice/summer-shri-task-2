@@ -3,13 +3,13 @@
 
 .widget-devices {
   overflow: hidden;
-  height: 120px;
+  height: 125px;
   margin: 0 (-$paddingSideDesktop);
-  max-width: calc(100% + $paddingSideDesktop * 2);
+  max-width: calc(100% + 80px); // paddingSideDesktop * 2
 
   @include media("mobile") {
     margin: 0 (-$paddingSideMobile);
-    max-width: calc(100% + paddingSideMobile * 2);
+    max-width: calc(100% + 40px); // paddingSideMobile * 2
   }
 
   &-list {

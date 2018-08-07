@@ -22,7 +22,7 @@ block content
 			header.dashboard-panel-header.dashboard-panel-header_type-devices
 				div.dashboard-panel-filters
 					h1.dashboard-panel__title Избранные устройства
-					+filters("dashboard-panel-header__filters")
+					+filters("dashboard-panel-header__filters", ['Все', 'Кухня', 'Зал', 'Лампочки', 'Камеры'])
 				+mobileDropdown()
 				+pager("devices-list-pager")
 

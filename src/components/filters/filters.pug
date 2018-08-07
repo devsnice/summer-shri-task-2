@@ -1,8 +1,7 @@
-mixin filters(className)
-  .filters(class=className)
-    ul.filters-list
-      li.filters-list__item.filters-list__item_state-active Все
-      li.filters-list__item Кухня
-      li.filters-list__item Зал
-      li.filters-list__item Лампочки
-      li.filters-list__item Камеры
+mixin filters(className, filtersList)
+    div(class=className).filters
+      each val, index in filtersList
+        if index==0
+          button.filters__item.filters__item_state-active= val
+        else
+          button.filters__item= val

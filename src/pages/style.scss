@@ -1,4 +1,5 @@
 @import "../styles/vars";
+@import "../styles/media";
 
 .dashboard {
   display: flex;
@@ -24,14 +25,14 @@
         margin-left: 13px;
         float: right;
 
-        @media screen and (max-width: 768px) {
+        @include media("mobile") {
           display: none;
         }
       }
 
       &_m {
         &-hidden {
-          @media screen and (max-width: 768px) {
+          @include media("mobile") {
             display: none;
           }
         }
@@ -63,13 +64,13 @@
       &-half {
         width: 49%;
 
-        @media screen and (max-width: 768px) {
+        @include media("mobile") {
           width: 100%;
         }
       }
 
       &-scripts {
-        @media screen and (max-width: 768px) {
+        @include media("mobile") {
           margin-top: 30px;
         }
       }

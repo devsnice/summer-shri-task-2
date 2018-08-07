@@ -1,0 +1,45 @@
+@import "../../styles/media";
+
+.filters {
+  &__item {
+    display: inline-block;
+    border-radius: 20px;
+    background: #f7f7f7;
+    padding: 8px 15px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-right: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_state {
+      &-active {
+        background: #ffd93e;
+      }
+    }
+
+    @include media("mobile") {
+      font-weight: 400;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: rgba(#ffd93e, 0.4);
+    }
+
+    &:active {
+      background: rgba(#ffd93e, 0.7);
+    }
+  }
+
+  &_type-with-scroll {
+    display: flex;
+    overflow: scroll;
+    width: 100%;
+  }
+}

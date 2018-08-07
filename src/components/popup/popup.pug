@@ -33,6 +33,8 @@ include ../range/range.pug
       .popup-header__info
         h3.popup-header__title Elgato Eve Degree Connected
         p.popup-header__desc Включено
+        .popup-header__filter
+          +filters("filters_type-with-scroll", ['Вручную', 'Холодно', 'Тепло', 'Жарко'])
 
       .popup-header__extra
         .popup-header__temperature
@@ -54,6 +56,8 @@ include ../range/range.pug
       .popup-header__info
         h3.popup-header__title Elgato Eve Degree Connected
         p.popup-header__desc Включено
+        .popup-header__filter
+          +filters("filters_type-with-scroll", ['Вручную', 'Дневной свет', 'Вечерний свет', 'Рассвет'])
 
       .popup-header__extra
         .popup-header__icon
