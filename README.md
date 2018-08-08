@@ -1,7 +1,7 @@
 # Школа разработки интерфейсов - второе задание 
 
 ## Github Pages
-
+- [Главная страница](http://devsnice.github.io/shri/)
 
 ## Решение
 - Gulp - task-runner для всего проекта
