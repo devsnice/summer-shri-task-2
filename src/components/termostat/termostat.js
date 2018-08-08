@@ -1,8 +1,3 @@
-// TODO:
-// - moved numbers to variables
-// - hold value in the input
-// - fix arrow styles
-
 export default class Termostat {
   constructor({ min, max, defaultValue }) {
     this.isDragging = false;
@@ -54,6 +49,10 @@ export default class Termostat {
     this.addEventListeners();
   }
 
+  /**
+   *
+   * @param {Number} defaultTemperature
+   */
   setInitValue(defaultTemperature) {
     const mapTemperatureToRadians = temperature => {
       const radians =
@@ -67,6 +66,10 @@ export default class Termostat {
     this.updateTermostatValue(cssInitRadiansAngle);
   }
 
+  /**
+   *
+   * @param {Number} newRadianValue
+   */
   renderTermostatValue(newRadianValue) {
     const mapRadiansToTemperature = radians => {
       const temperature =
@@ -80,12 +83,21 @@ export default class Termostat {
     this.value.innerHTML = `+${newValue}`;
   }
 
+  /**
+   * Render termostat value tranformed in the interface of termostat
+   * @param {Number} cssNewRadiansAngle
+   */
   updateTermostatValue(cssNewRadiansAngle) {
     this.arrow.updateValue(cssNewRadiansAngle);
     this.markers.updateMarkersValue(cssNewRadiansAngle);
+
     this.renderTermostatValue(cssNewRadiansAngle);
   }
 
+  /**
+   * Calculate what value user wants to the termostat
+   * @param {Event} e
+   */
   processUserGesture(e) {
     const eventCoords = {
       x: e.pageX,
@@ -149,6 +161,10 @@ export default class Termostat {
   }
 }
 
+/**
+ * Class responds for working markers.
+ * Creates needed amount of lines and appends it to termostat.
+ */
 class TermostatMarkers {
   constructor({ markLength, circleRadius, circleAngle }) {
     this.options = {
@@ -195,14 +211,22 @@ class TermostatMarkers {
       lines.push(defaultLine);
     }
 
-    this.markersGroupElem.append(...lines);
+    if (!this.markersGroupElem.append) {
+      lines.map(line => {
+        this.markersGroupElem.appendChild(line);
+      });
+    } else {
+      this.markersGroupElem.append(...lines);
+    }
   }
 
   updateMarkersValue(cssNewRadiansAngle) {
+    // we calculate how much lines matches to currents radians angle
     const filledMarkersAmount = Math.round(
       cssNewRadiansAngle / (this.line.breadth + this.line.offset)
     );
 
+    // Animation of marks works with inline css mechanism
     this.markersStylesBlock.innerHTML = `
        #termostat-marks line:nth-child(-n + ${filledMarkersAmount}){
             stroke: #F5A623;
@@ -220,6 +244,10 @@ class TermostatArrow {
     };
   }
 
+  /**
+   *
+   * @param {Number} cssNewRadiansAngle
+   */
   updateValue(cssNewRadiansAngle) {
     this.arrowElement.style.transform = `rotate(${Math.round(
       cssNewRadiansAngle + this.options.circleFromAngle
